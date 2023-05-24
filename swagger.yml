@@ -1,0 +1,96 @@
+paths:
+  /user:
+    get:
+      tags: 
+        - User
+      summary: "Get all users"
+      
+      responses:
+        200:
+          description: "OK"
+          content: 
+            application/json: 
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  statusMsg:
+                    type: string
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                      name:
+                        type: string
+                      lastname:
+                        type: string
+                      username:
+                        type: string
+                      email:
+                        type: string
+                      password:
+                        type: string
+                      city: 
+                        type: string
+                      province:
+                        type: string
+  /user/{id}:
+    get:
+      tags: 
+        - User
+      summary: "Obtener un usuario por ID"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          type: "integer"
+      responses:
+        200:
+          description: "OK"
+  /createUser:
+    post:
+      tags: 
+        - User
+      summary: "Crear un usuario"
+      parameters:
+        - name: "user"
+          in: "body"
+          required: true
+          schema:
+            $ref: "#/definitions/User"
+      responses:
+        201:
+          description: "Creado"
+  /deleteUser/{id}:
+    delete:
+      tags: 
+        - User
+      summary: "Borrar un usuario por ID"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          type: "integer"
+      responses:
+        204:
+          description: "Eliminado"
+  /updateUser/{id}:
+    patch:
+      tags: 
+        - User
+      summary: "Actualizar un usuario por ID"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          type: "integer"
+        - name: "user"
+          in: "body"
+          required: true
+          schema:
+            $ref: "#/definitions/User"
+      responses:
+        200:
+          description: "Actualizado"
