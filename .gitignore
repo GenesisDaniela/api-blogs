@@ -3,3 +3,5 @@ postgres
 package-lock.json
 .gitattributes
 LICENSE
+blog.pem
+.env

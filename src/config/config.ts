@@ -1,4 +1,4 @@
-import * as dotenv from "dotenv"
+import * as dotenv from "dotenv";
 import { DataSource, DataSourceOptions } from "typeorm"
 import swaggerJSDoc from 'swagger-jsdoc';
 import { PersonEntity } from '../person/person/entity/person.entity';
