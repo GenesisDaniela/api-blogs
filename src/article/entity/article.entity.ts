@@ -18,7 +18,7 @@ export class ArticleEntity extends BaseEntity {
         type: 'varchar',
         length: 500,
         nullable: false,
-        select:false
+        select:true
     })
     contenido!: string
 

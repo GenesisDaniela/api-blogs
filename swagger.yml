@@ -94,3 +94,19 @@ paths:
       responses:
         200:
           description: "Actualizado"
+  /file:
+    post:
+      tags: 
+        - File
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                fileName:
+                  type: string
+                  format: binary  
+      responses:
+        200:
+          description: "Uploaded file"
